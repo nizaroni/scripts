@@ -11,6 +11,7 @@ async function scanUrls(urls) {
 	let notOkay = []
 	let noIndexHeader = []
 	let noIndexMeta = []
+	let vercel = []
 	let index = 0
 	let timer
 
@@ -35,6 +36,10 @@ async function scanUrls(urls) {
 			if (text.includes('noindex')) {
 				noIndexMeta.push(url)
 			}
+
+			if (text.includes('vercel')) {
+				vercel.push(url)
+			}
 		}
 
 		index += 1
@@ -45,6 +50,7 @@ async function scanUrls(urls) {
 			console.log(`- ⛔️ ${notOkay.length} URLs didn't respond with a 200 OK.`)
 			console.log(`- 🤯 ${noIndexHeader.length} URLs had the noindex header.`)
 			console.log(`- 🏷️ ${noIndexMeta.length} URLs had the noindex tag.`)
+			console.log(`- 🌐 ${vercel.length} URLs contained "vercel".`)
 			return
 		}
 		timer = setTimeout(loop, INTERVAL)
