@@ -1,5 +1,8 @@
 {
-  "dependencies": {
-    "csv": "^6.2.7"
-  }
+	"dependencies": {
+		"csv": "^6.2.7"
+	},
+	"scripts": {
+		"commit": "npx gitmoji-cli commit"
+	}
 }
