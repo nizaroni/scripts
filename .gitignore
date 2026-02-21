@@ -1,1 +1,5 @@
+# Folder for installed packages
 node_modules
+
+# Folder for storing data files that scripts use
+data
